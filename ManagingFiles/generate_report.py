@@ -19,10 +19,19 @@ def process_data(employee_list):
         department_data[department_name] = department_list.count(department_name)
     return department_data
 
+def write_report(dictionary, report_file):
+    with open(report_file, "w+") as f:
+        for k in sorted(dictionary):
+            f.write(str(k) + ':' + str(dictionary[k]) + '\n')
+        f.close()
+
+
+
 
 
 employee_list = read_employees('employee.csv')
 dictionary = process_data(employee_list)
+write_report(dictionary, 'report.txt')
 print(dictionary)
 
 
