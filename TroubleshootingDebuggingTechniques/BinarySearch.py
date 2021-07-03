@@ -15,3 +15,11 @@ def binary_search(list, key):
         if list[middle] < key:
             left = middle + 1
     return -1
+
+
+myList = [12,45,78,95,123,135,1458,45646,65477]
+#Sorted!!!!!!!!!!!!!
+keyIs = 45646
+index = binary_search(myList,keyIs)
+
+print("The index is:",index)
